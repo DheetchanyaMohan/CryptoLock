@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 25% 6%;
+    --foreground: 160 100% 95%;
+
+    --card: 220 20% 10%;
+    --card-foreground: 160 100% 95%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 160 100% 95%;
+
+    --primary: 155 100% 50%;
+    --primary-foreground: 220 25% 6%;
+
+    --secondary: 190 100% 50%;
+    --secondary-foreground: 220 25% 6%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 280 80% 60%;
+    --accent-foreground: 160 100% 95%;
+
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 15%;
+    --ring: 155 100% 50%;
+
+    --radius: 0.75rem;
+
+    --glow-primary: 0 0 20px hsl(155 100% 50% / 0.3);
+    --glow-secondary: 0 0 20px hsl(190 100% 50% / 0.3);
+    --glow-accent: 0 0 20px hsl(280 80% 60% / 0.3);
+
+    --sidebar-background: 220 20% 8%;
+    --sidebar-foreground: 160 100% 95%;
+    --sidebar-primary: 155 100% 50%;
+    --sidebar-primary-foreground: 220 25% 6%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 160 100% 95%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 155 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer utilities {
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  .glow-secondary {
+    box-shadow: var(--glow-secondary);
+  }
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+  .text-glow {
+    text-shadow: 0 0 10px hsl(155 100% 50% / 0.5);
+  }
+  .glass {
+    @apply bg-card/50 backdrop-blur-xl border border-border/50;
+  }
+  .gradient-border {
+    border-image: linear-gradient(135deg, hsl(155 100% 50%), hsl(190 100% 50%), hsl(280 80% 60%)) 1;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px hsl(155 100% 50% / 0.3); }
+  50% { box-shadow: 0 0 25px hsl(155 100% 50% / 0.6); }
+}
+
+@keyframes matrix-rain {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
