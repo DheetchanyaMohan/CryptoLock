@@ -86,6 +86,15 @@ Frontend (React + TypeScript) → Backend (Cloud + Auth + DB) → Storage (Encry
 - Cloud Backend (Auth + Database + Storage)  
 - Web Crypto API  
 - Canvas API (Steganography)  
-- Recharts (Analytics)  
+- Recharts (Analytics)
+
+  ## Future Enhancements
+
+- Multi-factor authentication (MFA) for enhanced account security.
+- Additional lock mechanisms such as biometric and location-based locks.
+- Group encrypted messaging.
+- File and document encryption support.
+- Real-time notifications for new messages.
+- Improved analytics with message activity trends.
 
 ---
